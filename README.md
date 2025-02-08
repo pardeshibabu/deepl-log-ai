@@ -5,6 +5,35 @@
 
 ---
 
+## Install MongoDB
+
+### Using Homebrew (Recommended)
+```bash
+brew tap mongodb/brew
+brew install mongodb-community@7.0
+brew services start mongodb-community@7.0
+```
+
+### Manual Installation
+1. Download MongoDB from [MongoDB Downloads](https://www.mongodb.com/try/download/community)
+2. Extract and move to `/usr/local/mongodb`
+3. Add MongoDB to your PATH:
+```bash
+echo 'export PATH=/usr/local/mongodb/bin:$PATH' >> ~/.zshrc
+source ~/.zshrc
+```
+4. Create data directory:
+```bash
+sudo mkdir -p /data/db
+sudo chown -R $(whoami) /data/db
+```
+5. Start MongoDB:
+```bash
+mongod
+```
+
+---
+
 ## Clone Repository
 ```bash
 git clone <repository-url>
@@ -165,3 +194,5 @@ black app/
 ### Check Types
 ```bash
 mypy app/
+```
+
